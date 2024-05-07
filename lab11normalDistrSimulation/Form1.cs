@@ -81,11 +81,12 @@ namespace lab11normalDistrSimulation
 
             for (int i = 0; i < sampleSize; i++)
             {
-                disp += normalDistrValues[i] * normalDistrValues[i];
+                disp += Math.Pow(normalDistrValues[i] - mean, 2);
             }
 
-            disp = disp / sampleSize;
-            disp -= mean * mean;
+            disp = disp / (double)sampleSize;
+            //disp = disp - mean * mean;
+
             for (int i = 0; i < binsN; i++)
             {
                 double a = sampleMin + i * binsWidth;
